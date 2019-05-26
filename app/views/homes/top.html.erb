@@ -1,0 +1,15 @@
+<% if flash[:alert] %>
+  <p><%= flash[:alert] %></p>
+<% end %>
+
+<section>
+	<div class="top-container">
+		<h1 class="top-header">Welcome to <span class="glyphicon glyphicon-book" aria-hidden="true"></span>Bookers !!</h1>
+		<p class="top-text">In <span class="glyphicon glyphicon-book" aria-hidden="true">Bookers,</span><br>
+			you can share and exchange your opinions , impressions , and emotions <br>
+			about varioius books!
+		</p>
+		<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-info btn-lg btn-block" %>
+		<%= link_to "Log in", new_user_session_path, class: "btn btn-success btn-lg btn-block" %>
+	</div>
+</section>

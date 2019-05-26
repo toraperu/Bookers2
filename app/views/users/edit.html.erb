@@ -1,0 +1,22 @@
+<section class="edit-container">
+	<% if @user.errors.any? %>
+	  <p class="error-message">error occurred</p>
+	  <div id="error_explanation" class="alert alert-danger">
+	    <ul>
+	      <% @user.errors.full_messages.each do |message| %>
+	        <li><%= message %></li>
+	      <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+	<h1 class="user-info-title">User info</h1>
+	<%= form_for(@user) do |f| %>
+		<p class="edit-name">name</p>
+		<%= f.text_field :name %>
+		<p class="edit-image">Image</p>
+		<%= f.attachment_field :profile_image %>
+		<p class="edit-introduction">Introduction</p>
+		<%= f.text_area :introduction %>
+		<%= f.submit 'Update User'%>
+	<% end %>
+</section>
